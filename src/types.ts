@@ -16,3 +16,19 @@ export interface PaginateResult<T> {
   readonly previous: string | null;
   readonly total: number;
 }
+
+/**
+ * @property {string} spotify - The Spotify URL for the object.
+ */
+export type ExternalUrls = { spotify: string };
+
+/**
+ * @property {string} url - The source URL of the image.
+ * @property {number} height - The image height in pixels.
+ * @property {number} url - The image width in pixels.
+ */
+export type Image = {
+  readonly url: string;
+  readonly height: number;
+  readonly width: number;
+};

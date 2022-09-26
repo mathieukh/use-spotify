@@ -1,11 +1,4 @@
-/**
- * @property {string} url - The source URL of the image.
- * @property {number} height - The image height in pixels.
- * @property {number} width - The image width in pixels.
- */
-export type Icon = {
-  readonly url: string;
-};
+import { Image } from "../types";
 
 /**
  * @property {string} href - A link to the Web API endpoint returning full details of the category.
@@ -15,7 +8,7 @@ export type Icon = {
  */
 export type Category = {
   readonly href: string;
-  readonly icons: Icon[];
+  readonly icons: Image[];
   readonly id: string;
   readonly name: string;
 };
