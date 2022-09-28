@@ -1,4 +1,4 @@
-import { Image } from "../../types";
+import { Image } from "../types";
 
 /**
  * @property {string} href - A link to the Web API endpoint returning full details of the category.

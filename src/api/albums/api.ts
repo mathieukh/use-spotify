@@ -1,5 +1,5 @@
 import { spotifyClient } from "../client";
-import { PaginateResult } from "../../types";
+import { PaginateResult } from "../types";
 import { Track } from "../tracks";
 import { Album } from "./types";
 

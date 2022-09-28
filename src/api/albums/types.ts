@@ -1,6 +1,6 @@
 import { Artist } from "../artists";
 import { Track } from "../tracks";
-import { ExternalUrls, PaginateResult, Image } from "../../types";
+import { ExternalUrls, PaginateResult, Image } from "../types";
 
 export type AlbumType = "album" | "single" | "compilation";
 

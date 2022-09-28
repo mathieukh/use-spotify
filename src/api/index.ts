@@ -1,8 +1,12 @@
-export * as albums from "./albums";
-export * as artists from "./artists";
-export * as categories from "./categories";
-export * as genres from "./genres";
-export * as markets from "./markets";
-export * as player from "./player";
-export * as tracks from "./tracks";
+import * as albums from "./albums";
+import * as artists from "./artists";
+import * as categories from "./categories";
+import * as genres from "./genres";
+import * as markets from "./markets";
+import * as player from "./player";
+import * as tracks from "./tracks";
+export * from "./types";
+
 export { spotifyClient } from "./client";
+
+export { albums, artists, categories, genres, markets, player, tracks };
