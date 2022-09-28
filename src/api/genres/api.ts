@@ -1,4 +1,4 @@
-import { spotifyClient } from "../api";
+import { spotifyClient } from "../../api";
 
 /**
  * Retrieve a list of available genres seed parameter values for recommendations.

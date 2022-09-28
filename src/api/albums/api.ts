@@ -1,6 +1,6 @@
-import { spotifyClient } from "../api";
-import { Track } from "../tracks/types";
-import { PaginateResult } from "../types";
+import { spotifyClient } from "../../api";
+import { PaginateResult } from "../../types";
+import { Track } from "../tracks";
 import { Album } from "./types";
 
 /**

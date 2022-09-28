@@ -1,4 +1,4 @@
-import { spotifyClient } from "../api";
+import { spotifyClient } from "../../api";
 
 /**
  * Get the list of markets where Spotify is available.

@@ -1,7 +1,7 @@
-import { Album } from "../albums/types";
-import { spotifyClient } from "../api";
-import { Track } from "../tracks/types";
-import { PaginateResult } from "../types";
+import { Album } from "../albums";
+import { spotifyClient } from "../../api";
+import { Track } from "../tracks";
+import { PaginateResult } from "../../types";
 import { Artist } from "./types";
 
 /**

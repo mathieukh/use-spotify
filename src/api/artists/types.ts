@@ -1,4 +1,4 @@
-import { ExternalUrls, Image } from "../types";
+import { ExternalUrls, Image } from "../../types";
 
 /**
  * @property {string} href - This will always be set to null, as the Web API does not support it at the moment.

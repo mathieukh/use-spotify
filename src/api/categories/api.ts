@@ -1,5 +1,5 @@
-import { spotifyClient } from "../api";
-import { PaginateResult } from "../types";
+import { spotifyClient } from "../../api";
+import { PaginateResult } from "../../types";
 import { Category } from "./types";
 
 /**
