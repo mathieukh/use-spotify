@@ -1,4 +1,4 @@
-import { spotifyClient } from "../../api";
+import { spotifyClient } from "../client";
 import { PaginateResult } from "../../types";
 import { Category } from "./types";
 

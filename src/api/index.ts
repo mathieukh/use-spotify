@@ -5,3 +5,4 @@ export * as genres from "./genres";
 export * as markets from "./markets";
 export * as player from "./player";
 export * as tracks from "./tracks";
+export { spotifyClient } from "./client";

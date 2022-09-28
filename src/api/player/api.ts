@@ -1,4 +1,4 @@
-import { spotifyClient } from "../../api";
+import { spotifyClient } from "../client";
 import { Device, RepeatState } from "./types";
 
 /**

@@ -1,5 +1,5 @@
 import { Album } from "../albums";
-import { spotifyClient } from "../../api";
+import { spotifyClient } from "../client";
 import { Track } from "../tracks";
 import { PaginateResult } from "../../types";
 import { Artist } from "./types";
