@@ -1,1 +1,2 @@
-export * from "./api";
+export * from "./GenresApi";
+export * from "./hooks";
