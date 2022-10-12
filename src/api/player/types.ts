@@ -20,3 +20,4 @@ export type Device = {
 
 export type RepeatState = "off" | "track" | "context";
 export type ShuffleState = "on" | "off";
+export type Offset = { position: number} | { uri: string}

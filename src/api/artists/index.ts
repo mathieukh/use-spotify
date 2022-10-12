@@ -1,2 +1,3 @@
-export * from "./api";
+export * from "./ArtistsApi";
+export * from "./hooks";
 export * from "./types";
