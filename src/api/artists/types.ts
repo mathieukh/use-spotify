@@ -1,5 +1,7 @@
 import { ExternalUrls, Image } from "../types";
 
+export type IncludeGroup = "album" | "single" | "appears_on" | "compilation";
+
 /**
  * @property {string} href - This will always be set to null, as the Web API does not support it at the moment.
  * @property {number} total - The total number of followers.

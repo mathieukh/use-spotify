@@ -7,6 +7,6 @@ import * as player from "./player";
 import * as tracks from "./tracks";
 export * from "./types";
 
-export { spotifyClient } from "./client";
+export { createSpotifyClient } from "./client";
 
 export { albums, artists, categories, genres, markets, player, tracks };

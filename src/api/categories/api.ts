@@ -1,4 +1,4 @@
-import { spotifyClient } from "../client";
+import { createSpotifyClient } from "../client";
 import { PaginateResult } from "../types";
 import { Category } from "./types";
 
@@ -19,7 +19,7 @@ export const getSeveralBrowseCategories = async (
     offset?: number;
   } = {}
 ) => {
-  const response = await spotifyClient.get(`/browse/categories`, { params });
+  const response = await createSpotifyClient.get(`/browse/categories`, { params });
   return response.data as { categories: PaginateResult<Category> };
 };
 
@@ -38,7 +38,7 @@ export const getSingleBrowseCategories = async ({
   country?: string;
   locale?: string;
 }) => {
-  const response = await spotifyClient.get(`/browse/category/${categoryId}`, {
+  const response = await createSpotifyClient.get(`/browse/category/${categoryId}`, {
     params,
   });
   return response.data as Category;

@@ -1,4 +1,4 @@
-import { spotifyClient } from "../client";
+import { createSpotifyClient } from "../client";
 import { Device, RepeatState } from "./types";
 
 /**
@@ -14,7 +14,7 @@ export const transferPlayback = async ({
   device_id: string;
   play?: boolean;
 }) => {
-  const response = await spotifyClient.put("/me/player", {
+  const response = await createSpotifyClient.put("/me/player", {
     data: {
       device_ids: [device_id],
       ...data,
@@ -28,7 +28,7 @@ export const transferPlayback = async ({
  * @returns {{devices: Device[]}} A set of devices
  */
 export const getAvailableDevices = async () => {
-  const response = await spotifyClient.get(`/me/player/devices`);
+  const response = await createSpotifyClient.get(`/me/player/devices`);
   return response.data as { devices: Device[] };
 };
 
@@ -43,7 +43,7 @@ export type Offset = { position: number} | { uri: string}
  * @param {number=} position_ms - The position in milliseconds to seek to. Must be a positive number. Passing in a position that is greater than the length of the track will cause the player to start playing the next song.
  */
 export const startOrResumePlayback = async ({device_id, ...data}: { device_id?: string; context_uri?: string; uris?: string[]; offset?: Offset; position_ms?: number }) => {
-  const response = await spotifyClient.put(`/me/player/play`, { params: { device_id }, data });
+  const response = await createSpotifyClient.put(`/me/player/play`, { params: { device_id }, data });
   return response.data as void;
 };
 
@@ -52,7 +52,7 @@ export const startOrResumePlayback = async ({device_id, ...data}: { device_id?: 
  * @param {string=} device_id - The id of the device this command is targeting. If not supplied, the user's currently active device is the target.
  */
 export const pausePlayback = async (params: { device_id?: string }) => {
-  const response = await spotifyClient.put(`/me/player/pause`, { params });
+  const response = await createSpotifyClient.put(`/me/player/pause`, { params });
   return response.data as void;
 };
 
@@ -61,7 +61,7 @@ export const pausePlayback = async (params: { device_id?: string }) => {
  * @param {string=} device_id - The id of the device this command is targeting. If not supplied, the user's currently active device is the target.
  */
 export const skipToNext = async (params: { device_id?: string }) => {
-  const response = await spotifyClient.post(`/me/player/next`, { params });
+  const response = await createSpotifyClient.post(`/me/player/next`, { params });
   return response.data as void;
 };
 
@@ -70,7 +70,7 @@ export const skipToNext = async (params: { device_id?: string }) => {
  * @param {string=} device_id - The id of the device this command is targeting. If not supplied, the user's currently active device is the target.
  */
 export const skipToPrevious = async (params: { device_id?: string }) => {
-  const response = await spotifyClient.post(`/me/player/previous`, { params });
+  const response = await createSpotifyClient.post(`/me/player/previous`, { params });
   return response.data as void;
 };
 
@@ -83,7 +83,7 @@ export const seekToPosition = async (params: {
   position_ms: number;
   device_id?: string;
 }) => {
-  const response = await spotifyClient.put(`/me/player/seek`, { params });
+  const response = await createSpotifyClient.put(`/me/player/seek`, { params });
   return response.data as void;
 };
 
@@ -99,7 +99,7 @@ export const setRepeatMode = async (params: {
   state: RepeatState;
   device_id?: string;
 }) => {
-  const response = await spotifyClient.put(`/me/player/repeat`, { params });
+  const response = await createSpotifyClient.put(`/me/player/repeat`, { params });
   return response.data as void;
 };
 
@@ -112,7 +112,7 @@ export const setPlaybackVolume = async (params: {
   volume_percent: number;
   device_id?: string;
 }) => {
-  const response = await spotifyClient.put(`/me/player/volume`, { params });
+  const response = await createSpotifyClient.put(`/me/player/volume`, { params });
   return response.data as void;
 };
 
@@ -126,7 +126,7 @@ export const toggleShufflePlayback = async (params: {
   state: boolean;
   device_id?: string;
 }) => {
-  const response = await spotifyClient.put(`/me/player/shuffle`, { params });
+  const response = await createSpotifyClient.put(`/me/player/shuffle`, { params });
   return response.data as void;
 };
 
@@ -139,6 +139,6 @@ export const addItemToPlaybackQueue = async (params: {
   uri: string;
   device_id?: string;
 }) => {
-  const response = await spotifyClient.post(`/me/player/queue`, { params });
+  const response = await createSpotifyClient.post(`/me/player/queue`, { params });
   return response.data as void;
 };
