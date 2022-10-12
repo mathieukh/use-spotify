@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useSpotifyClient } from "../hooks";
+import { useSpotifyClient } from "../../hooks";
 import { AlbumsApi } from "./AlbumsApi";
 
 export const useAlbumsApi = () => {
