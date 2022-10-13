@@ -2,7 +2,15 @@
   "name": "@khalypso/use-spotify",
   "version": "0.0.2",
   "license": "MIT",
+  "author": "Mathieu KHALEM <mathieu@khalypso.fr>",
   "description": "Provide an hook to use the Spotify API",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathieukh/use-spotify.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

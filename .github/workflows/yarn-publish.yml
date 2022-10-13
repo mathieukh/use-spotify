@@ -36,6 +36,6 @@ jobs:
       - name: Build the application
         run: yarn build
       - name: Publish the package on NPM registry
-        run: npm publish --access public
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
