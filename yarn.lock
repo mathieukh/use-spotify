@@ -16,6 +16,9 @@ __metadata:
   peerDependencies:
     axios: ^0.27.2
     react: 16.8 - 18
+  peerDependenciesMeta:
+    react:
+      optional: true
   languageName: unknown
   linkType: soft
 
