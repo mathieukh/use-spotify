@@ -22,10 +22,8 @@ false or not provided: keep the current playback state.
     play?: boolean;
   }) => {
     const response = await this.spotifyClient.put("/me/player", {
-      data: {
-        device_ids: [device_id],
-        ...data,
-      },
+      device_ids: [device_id],
+      ...data,
     });
     return response.data as void;
   };
