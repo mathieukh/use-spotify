@@ -1,10 +1,8 @@
-import * as albums from "./albums";
-import * as artists from "./artists";
-import * as categories from "./categories";
-import * as genres from "./genres";
-import * as markets from "./markets";
-import * as player from "./player";
-import * as tracks from "./tracks";
+export * from "./albums";
+export * from "./artists";
+export * from "./categories";
+export * from "./genres";
+export * from "./markets";
+export * from "./player";
+export * from "./tracks";
 export * from "./types";
-
-export { albums, artists, categories, genres, markets, player, tracks };
