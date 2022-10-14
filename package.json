@@ -1,6 +1,6 @@
 {
   "name": "@khalypso/use-spotify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "Mathieu KHALEM <mathieu@khalypso.fr>",
   "description": "Provide an hook to use the Spotify API",
