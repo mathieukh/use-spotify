@@ -48,8 +48,6 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 A simple way to use the [Spotify web API](https://developer.spotify.com/documentation/web-api/) with typed responses and variables thanks to [TypeScript](https://www.typescriptlang.org/).
 
 Each API can be used directly or throught hooks, the last one handling the need to update the access token when needed.
@@ -96,11 +94,7 @@ You can use each API without the need to go throught hooks.
 You will have to handle by yourself the renewal of each client when the access token won't be usable anymore.
 
 ```typescript
-import { createSpotifyClient, api } from "./index";
-
-const {
-  albums: { AlbumsApi },
-} = api;
+import { createSpotifyClient, AlbumsApi } from "./index";
 
 const spotifyClient = createSpotifyClient('YOUR-TOKEN');
 
@@ -113,11 +107,7 @@ Throught the hooks, the renewal of each client is done behind the hood.
 
 ```typescript
 import { FC, useEffect, useMemo, useState } from "react";
-import { SpotifyApiProvider, api } from "./index";
-
-const {
-  albums: { useAlbumsApi },
-} = api;
+import { SpotifyApiProvider, useAlbumsApi } from "./index";
 
 const SaveAlbumButton: FC<{ id: string }> = (id) => {
   const albumsApi = useAlbumsApi();
