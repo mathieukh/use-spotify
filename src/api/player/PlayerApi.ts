@@ -55,9 +55,8 @@ false or not provided: keep the current playback state.
     offset?: Offset;
     position_ms?: number;
   }) => {
-    const response = await this.spotifyClient.put(`/me/player/play`, {
+    const response = await this.spotifyClient.put(`/me/player/play`, data, {
       params: { device_id },
-      data,
     });
     return response.data as void;
   };
@@ -67,9 +66,13 @@ false or not provided: keep the current playback state.
    * @param {string=} device_id - The id of the device this command is targeting. If not supplied, the user's currently active device is the target.
    */
   pausePlayback = async (params: { device_id?: string }) => {
-    const response = await this.spotifyClient.put(`/me/player/pause`, {
-      params,
-    });
+    const response = await this.spotifyClient.put(
+      `/me/player/pause`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 
@@ -78,9 +81,13 @@ false or not provided: keep the current playback state.
    * @param {string=} device_id - The id of the device this command is targeting. If not supplied, the user's currently active device is the target.
    */
   skipToNext = async (params: { device_id?: string }) => {
-    const response = await this.spotifyClient.post(`/me/player/next`, {
-      params,
-    });
+    const response = await this.spotifyClient.post(
+      `/me/player/next`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 
@@ -89,9 +96,13 @@ false or not provided: keep the current playback state.
    * @param {string=} device_id - The id of the device this command is targeting. If not supplied, the user's currently active device is the target.
    */
   skipToPrevious = async (params: { device_id?: string }) => {
-    const response = await this.spotifyClient.post(`/me/player/previous`, {
-      params,
-    });
+    const response = await this.spotifyClient.post(
+      `/me/player/previous`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 
@@ -104,9 +115,13 @@ false or not provided: keep the current playback state.
     position_ms: number;
     device_id?: string;
   }) => {
-    const response = await this.spotifyClient.put(`/me/player/seek`, {
-      params,
-    });
+    const response = await this.spotifyClient.put(
+      `/me/player/seek`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 
@@ -122,9 +137,13 @@ false or not provided: keep the current playback state.
     state: RepeatState;
     device_id?: string;
   }) => {
-    const response = await this.spotifyClient.put(`/me/player/repeat`, {
-      params,
-    });
+    const response = await this.spotifyClient.put(
+      `/me/player/repeat`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 
@@ -137,9 +156,13 @@ false or not provided: keep the current playback state.
     volume_percent: number;
     device_id?: string;
   }) => {
-    const response = await this.spotifyClient.put(`/me/player/volume`, {
-      params,
-    });
+    const response = await this.spotifyClient.put(
+      `/me/player/volume`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 
@@ -153,9 +176,13 @@ false or not provided: keep the current playback state.
     state: boolean;
     device_id?: string;
   }) => {
-    const response = await this.spotifyClient.put(`/me/player/shuffle`, {
-      params,
-    });
+    const response = await this.spotifyClient.put(
+      `/me/player/shuffle`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 
@@ -168,9 +195,13 @@ false or not provided: keep the current playback state.
     uri: string;
     device_id?: string;
   }) => {
-    const response = await this.spotifyClient.post(`/me/player/queue`, {
-      params,
-    });
+    const response = await this.spotifyClient.post(
+      `/me/player/queue`,
+      undefined,
+      {
+        params,
+      }
+    );
     return response.data as void;
   };
 }
