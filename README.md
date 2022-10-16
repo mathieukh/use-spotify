@@ -1,4 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
 
 [![Stars][stars-shield]][stars-url]
@@ -29,35 +30,34 @@ It relies on [Axios](https://axios-http.com/) to perform the requests.
 
 ### Built With
 
-* [React](https://reactjs.org/)
-* [Axios](https://axios-http.com/)
-* [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [Axios](https://axios-http.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 You can easily add the package on your project to start using it
 
 ### Prerequisites
 
-  ```sh
-  yarn add axios
-  ```
+```sh
+yarn add axios
+```
 
 ### Installation
 
-  ```sh
-  yarn add @khalypso/use-spotify
-  ```
+```sh
+yarn add @khalypso/use-spotify
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 You can use each API without the need to go throught hooks.
@@ -65,20 +65,20 @@ You can use each API without the need to go throught hooks.
 You will have to handle by yourself the renewal of each client when the access token won't be usable anymore.
 
 ```typescript
-import { createSpotifyClient, AlbumsApi } from "./index";
+import { createSpotifyClient, AlbumsApi } from "@khalypso/use-spotify";
 
-const spotifyClient = createSpotifyClient('YOUR-TOKEN');
+const spotifyClient = createSpotifyClient("YOUR-TOKEN");
 
 const albumsApi = AlbumsApi.fromClient(spotifyClient);
 
-const album = await albumsApi.getAlbum({id: "4aawyAB9vmqN3uQ7FjRGTy"})
+const album = await albumsApi.getAlbum({ id: "4aawyAB9vmqN3uQ7FjRGTy" });
 ```
 
 Throught the hooks, the renewal of each client is done behind the hood.
 
 ```typescript
 import { FC, useEffect, useMemo, useState } from "react";
-import { SpotifyApiProvider, useAlbumsApi } from "./index";
+import { SpotifyApiProvider, useAlbumsApi } from "@khalypso/use-spotify";
 
 const SaveAlbumButton: FC<{ id: string }> = (id) => {
   const albumsApi = useAlbumsApi();
@@ -93,9 +93,11 @@ const SaveAlbumButton: FC<{ id: string }> = (id) => {
   );
 };
 
-const HomePage: FC = () => <SpotifyApiProvider accessToken={"YOUR-TOKEN"}>
+const HomePage: FC = () => (
+  <SpotifyApiProvider accessToken={"YOUR-TOKEN"}>
     <SaveAlbumButton id={"4aawyAB9vmqN3uQ7FjRGTy"} />
-</SpotifyApiProvider>
+  </SpotifyApiProvider>
+);
 ```
 
 Be aware that you might want to use a library as [react-query](https://tanstack.com/query/v4) to perform the request by itself and only use the data.
@@ -103,6 +105,7 @@ Be aware that you might want to use a library as [react-query](https://tanstack.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -119,6 +122,7 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
@@ -129,6 +133,7 @@ Project Link: [https://github.com/mathieukh/use-spotify](https://github.com/math
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [stars-shield]: https://badgen.net/github/stars/mathieukh/use-spotify
 [stars-url]: https://github.com/mathieukh/use-spotify/stargazers
 [issues-shield]: https://badgen.net/github/issues/mathieukh/use-spotify
